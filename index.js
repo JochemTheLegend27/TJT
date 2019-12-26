@@ -83,6 +83,9 @@ if(msg.author.id === botowner || msg.author.id === serverowner.id){
         if(args[1] === '6'){channels[botid].channel6 = msg.channel.id}
         if(args[1] === '7'){channels[botid].channel7 = msg.channel.id}
         if(args[1] === '8'){channels[botid].channel8 = msg.channel.id}
+        fs.writeFile('opslag/channels.json', JSON.stringify(channels),(err) => {
+        if(err) console.error(err);
+        })
     }
 }
 
