@@ -74,15 +74,15 @@ if(msg.author.id === botowner || msg.author.id === serverowner.id){
     }
 
     if(msg.content.startsWith(PREFIX + 'setchannel')){
-        if(args[1] === 'staff'){channels[botid].staffchannel = msg.channel.id}
-        if(args[1] === '1'){channels[botid].channel1 = msg.channel.id}
-        if(args[1] === '2'){channels[botid].channel2 = msg.channel.id}   
-        if(args[1] === '3'){channels[botid].channel3 = msg.channel.id}
-        if(args[1] === '4'){channels[botid].channel4 = msg.channel.id}
-        if(args[1] === '5'){channels[botid].channel5 = msg.channel.id}
-        if(args[1] === '6'){channels[botid].channel6 = msg.channel.id}
-        if(args[1] === '7'){channels[botid].channel7 = msg.channel.id}
-        if(args[1] === '8'){channels[botid].channel8 = msg.channel.id}
+        if(args[1] === 'staff'){channels[botid].staffchannel = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '1'){channels[botid].channel1 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '2'){channels[botid].channel2 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}   
+        if(args[1] === '3'){channels[botid].channel3 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '4'){channels[botid].channel4 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '5'){channels[botid].channel5 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '6'){channels[botid].channel6 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '7'){channels[botid].channel7 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        if(args[1] === '8'){channels[botid].channel8 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
         fs.writeFile('opslag/channels.json', JSON.stringify(channels),(err) => {
         if(err) console.error(err);
         })
