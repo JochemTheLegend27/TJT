@@ -22,7 +22,7 @@ bot.on('ready', () => {
 bot.on('message', msg => {
 var owner = '398441594094616578';
 var gebruiker = msg.guild.id + msg.author.id;
-if(!stats[gebruiker])stats[botid] = {
+if(!stats[gebruiker])stats[gebruiker] = {
     berichten: 0
   }
 fs.writeFile('opslag/stats.json', JSON.stringify(stats),(err) => {
