@@ -61,12 +61,24 @@ fs.writeFile('opslag/stats.json', JSON.stringify(stats),(err) => {
 
 
 
+if(msg.channel.id !== channels[botid].channel1 ||msg.channel.id !== channels[botid].channel2 || msg.channel.id !== channels[botid].channel3|| msg.channel.id !== channels[botid].channel4|| msg.channel.id !== channels[botid].channel5|| msg.channel.id !== channels[botid].channel6|| msg.channel.id !== channels[botid].channel7|| msg.channel.id !== channels[botid].channel8|| msg.channel.id !== channels[botid].staffchannel){
+    if(msg.content === PREFIX + 'stats'){
+        msg.channel.sendMessage('jij hebt **' + stats[gebruiker].berichten + '** berichten')
+    }
+
+
+
+
+
+}
 if(msg.author.id === botowner || msg.author.id === serverowner.id){
-    if(msg.content.startsWith(PREFIX + 'setchannel')){
-        if(args[1] === 'staff'){channels[botid].staffchannel = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+    if(msg.content.startsWith(PREFIX + 'setchannel staff')&& channels[botid].staffchannel === 'none'){
+    channels[botid].staffchannel = msg.channel.id; 
+    msg.channel.sendMessage('staff kanaal succesvol gezet')
         fs.writeFile('opslag/channels.json', JSON.stringify(channels),(err) => {
             if(err) console.error(err);
             })
+            return;
     }
     if(channels[botid].staffchannel === 'none'){
         msg.channel.sendMessage('zet eerst een staff channel met *$setchannel staff*')
