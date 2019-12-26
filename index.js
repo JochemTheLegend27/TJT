@@ -52,7 +52,22 @@ fs.writeFile('opslag/stats.json', JSON.stringify(stats),(err) => {
     if(err) console.error(err);
     })
 
+    if(msg.content === PREFIX + 'stats'){
+        msg.channel.sendMessage('jij hebt **' + stats[gebruiker].berichten + '** berichten')
+    }
+
+
+
+
+
+
 if(msg.author.id === botowner || msg.author.id === serverowner.id){
+    if(msg.content.startsWith(PREFIX + 'setchannel')){
+        if(args[1] === 'staff'){channels[botid].staffchannel = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
+        fs.writeFile('opslag/channels.json', JSON.stringify(channels),(err) => {
+            if(err) console.error(err);
+            })
+    }
     if(channels[botid].staffchannel === 'none'){
         msg.channel.sendMessage('zet eerst een staff channel met *$setchannel staff*')
         .then(msg => {
@@ -84,16 +99,12 @@ if(msg.author.id === botowner || msg.author.id === serverowner.id){
         if(args[1] === '7'){channels[botid].channel7 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
         if(args[1] === '8'){channels[botid].channel8 = msg.channel.id; msg.channel.sendMessage('kanaal succesvol gezet')}
         fs.writeFile('opslag/channels.json', JSON.stringify(channels),(err) => {
-        if(err) console.error(err);
-        })
+            if(err) console.error(err);
+            })
     }
 }
-
-
-
-if(msg.content === PREFIX + 'stats'){
-    msg.channel.sendMessage('jij hebt **' + stats[gebruiker].berichten + '** berichten')
-}
+    
+    
 })
 //niet veranderen
 bot.login(process.env.BOT_TOKEN);
