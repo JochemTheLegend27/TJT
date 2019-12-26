@@ -22,7 +22,7 @@ bot.on('ready', () => {
 
 bot.on('message', msg => {
 var botowner = '398441594094616578';
-var serverowner      = thisguild.owner.user;
+var serverowner      = msg.guild.owner.user;
 var botid = '659768758235037697';
 var gebruiker = msg.guild.id + msg.author.id;
 let args = msg.content.substring(PREFIX.length).split(" "); 
