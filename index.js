@@ -69,7 +69,7 @@ if(msg.author.id === botowner || msg.author.id === serverowner.id){
     .addField('**$staffhelp** ' ,'help list')
     .addField('**$setchannel <getal 1/8>**','zet de channels voor deze bot')
     .addField('**$naam**','random gegenereerde naam')
-  msg.channel.send(speedyhelpEmbed);
+  msg.channel.send(staffhelpEmbed);
 
     }
 
