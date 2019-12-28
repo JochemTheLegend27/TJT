@@ -929,7 +929,7 @@ const times = x => f => {
 }
 times (x) (() => {
 
-  upgrades[gebruiker].berekeningen = 300*(upgrades[gebruiker].koekje+1);
+  upgrades[gebruiker].berekeningen = 2000*(upgrades[gebruiker].koekje+1);
   fs.writeFile('opslag/upgrades.json', JSON.stringify(upgrades),(err) => {
     if(err) console.error(err);
     }) 
@@ -991,7 +991,7 @@ if(msg.author.id === botowner || msg.author.id === serverowner.id){
     .setTitle("staff help")
     .addField('**$staffhelp** ' ,'help list')
     .addField('**$setchannel <getal 1/8>**','zet de channels voor deze bot')
-    .addField('**$naam**','random gegenereerde naam')
+
   msg.channel.send(staffhelpEmbed);
 
     }
