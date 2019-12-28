@@ -362,10 +362,10 @@ if(msg.channel.id !== channels[botid].channel1 ||msg.channel.id !== channels[bot
                   const drawuitgave2 = (args[1] * 200);
                   const drawcoins2 = stats[gebruiker].coins + -(args[1] * 200);
                   const drawheal = stats[gebruiker].XP + (args[1] * 1);
-                  if(stats[gebruiker].coins +1 > (args[1] * 50)) {
+                  if(stats[gebruiker].coins +1 > (args[1] * 200)) {
                     
                           msg.channel.sendMessage('Je hebt **' + (args[1]*1) + '**XP gekocht ');
-                          msg.channel.sendMessage('Je hebt nu nog **' + (stats[gebruiker].coins + -(args[1] * 50))+'** coins' );
+                          msg.channel.sendMessage('Je hebt nu nog **' + (stats[gebruiker].coins + -(args[1] * 200))+'** coins' );
                           stats[gebruiker].coins = drawcoins2;
                           stats[gebruiker].XP = drawheal;
                   }else{
