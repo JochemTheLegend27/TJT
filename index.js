@@ -238,7 +238,7 @@ if(msg.channel.id !== channels[botid].channel1 ||msg.channel.id !== channels[bot
         const profileEmbed = new Discord.RichEmbed()
     .setColor(kleur)
     .setTitle("Profile: " + msg.author.username)
-    .setImage(msg.author.avatarURL)
+  
     .addField('Level **'+ stats[gebruiker].level + '**','XP **' + stats[gebruiker].XP + '/'+rekenen+ ' **')
     .addField('Berichten ',stats[gebruiker].berichten)
     .addField('Rewards' ,stats[gebruiker].rewards)
