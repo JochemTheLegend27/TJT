@@ -919,7 +919,7 @@ if(upgrades[gebruiker].berekeningen < stats[gebruiker].coins +1 ){
 
 }
 if(args[2].startsWith('koek')){
-    if(upgrades[gebruiker].koekje <1){msg.channel.sendMessage('unlock eerst het vorige item');return;}
+    if(upgrades[gebruiker].discord <1){msg.channel.sendMessage('unlock eerst het vorige item');return;}
     const x = args[1]*1;
 const times = x => f => {
   if (x > 0) {
